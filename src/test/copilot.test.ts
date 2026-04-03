@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { buildUserPrompt } from '../services/openai';
+import { buildUserPrompt } from '../services/copilot';
 import { CAMPAIGN_SECTION_DEFINITIONS } from '../types/campaign';
 
 describe('buildUserPrompt', () => {

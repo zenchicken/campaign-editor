@@ -3,7 +3,7 @@ import { ApiKeyInput } from './components/ApiKeyInput';
 import { CampaignConceptForm } from './components/CampaignConceptForm';
 import { PromptSection } from './components/PromptSection';
 import { CampaignSummary } from './components/CampaignSummary';
-import { initOpenAI, generateCampaignContent, buildUserPrompt } from './services/openai';
+import { initCopilot, generateCampaignContent, buildUserPrompt } from './services/copilot';
 import {
   CAMPAIGN_SECTION_DEFINITIONS,
   type CampaignPhase,
@@ -27,8 +27,8 @@ export function App() {
   const [sections, setSections] = useState<CampaignSection[]>(createInitialSections);
   const [globalError, setGlobalError] = useState('');
 
-  const handleApiKey = useCallback((apiKey: string) => {
-    initOpenAI(apiKey);
+  const handleApiKey = useCallback((token: string) => {
+    initCopilot(token);
     setPhase('concept');
   }, []);
 

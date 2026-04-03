@@ -1,6 +1,7 @@
 # Campaign Editor
 
 An AI-powered tabletop RPG campaign generator built with React, TypeScript, and Vite.
+AI generation is powered by the [GitHub Models](https://github.com/marketplace/models) Copilot inference API via the `@azure-rest/ai-inference` SDK.
 
 ## What it does
 
@@ -19,14 +20,14 @@ Each section is AI-generated but fully editable — add your own GM notes and re
 
 ## Getting started
 
-You need an [OpenAI API key](https://platform.openai.com/api-keys) to use the app.
+You need a [GitHub personal access token](https://github.com/settings/tokens/new?scopes=models:read&description=Campaign+Editor) with the `models:read` scope to use the app.
 
 ```bash
 npm install
 npm run dev
 ```
 
-Then open http://localhost:5173 in your browser.
+Then open http://localhost:5173 in your browser and enter your GitHub PAT when prompted.
 
 ## Development
 
@@ -41,5 +42,5 @@ npm test          # Run tests
 
 - **React 19** + **TypeScript**
 - **Vite** for bundling
-- **OpenAI SDK** (gpt-4o-mini) for AI generation
+- **`@azure-rest/ai-inference`** + **`@azure/core-auth`** (GitHub Models / Copilot SDK) for AI inference via `https://models.github.ai/inference`
 - **Vitest** + **React Testing Library** for tests
